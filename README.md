@@ -33,5 +33,3 @@ A full-stack web application that allows users to register, log in, and manage g
 - **Backend**: Node.js with Express (API assumed to be running separately)
 - **Session Handling**: Cookie-based session control via backend `/session` endpoints
 - **Storage**: localStorage used for temporary client-side user metadata
-
-## 📂 File Structure (Frontend)
