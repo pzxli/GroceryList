@@ -1,0 +1,123 @@
+/* Welcome section */
+#welcome {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Floating Add Item Container (bottom-right) */
+#add-item-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Item Name input */
+#add-item-container input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 14px;
+    width: 160px;
+}
+
+/* Quantity input */
+#add-item-container input[type="number"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+    outline: none;
+    font-size: 14px;
+    width: 90px; /* increased to show full 'Quantity' */
+}
+
+/* Optional divider between inputs (if used in HTML) */
+#add-item-container .divider {
+    width: 1px;
+    height: 30px;
+    background: #ccc;
+    margin: 0 8px;
+}
+
+/* Plus button */
+#add-item-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: rgb(223, 72, 72);
+    box-shadow: 2px 2px 3px rgb(105, 105, 105);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+#add-item-btn:hover {
+    background-color: brown;
+}
+
+/* Modal form (center screen) — currently unused if you're using inline form */
+#add-item-form {
+    position: fixed;
+    background-color: rgb(216, 216, 216);
+    width: 300px;
+    height: 170px;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#add-item-form input {
+    width: 100%;
+    margin-bottom: 5px;
+    border: none;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+/* Background overlay for modal (if needed) */
+.opacity {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(15, 15, 15, 0.4);
+}
+
+/* Grocery list items */
+.item {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(228, 228, 228);
+    border-radius: 6px;
+}
+
+.item-name {
+    margin-top: 5px;
+}
