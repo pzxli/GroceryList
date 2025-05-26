@@ -1,4 +1,12 @@
 window.onload = async function(){
+
+    // Clear form fields on load
+    const loginForm = document.getElementById("login-form");
+    if (loginForm) {
+        loginForm.reset();
+    }
+
+    // Check if user is already logged in
     let response = await fetch(`${domain}/session`);
     let responseBody = await response.json();
 
@@ -6,6 +14,16 @@ window.onload = async function(){
         window.location = "./dashboard";
     }
 }
+
+// Also clear form if loaded from back-forward cache
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+      const loginForm = document.getElementById("login-form");
+      if (loginForm) {
+        loginForm.reset();
+      }
+    }
+  });
 
 
 /* function that runs when the page loads */
@@ -40,14 +58,8 @@ document.getElementById("login-form").addEventListener("submit", async function 
     }else{
         // store user's information in localStorage
         localStorage.setItem("firstname", responseBody.data.firstname);
-        localStorage.setItem("userId", user.id);
-        localStorage.setItem("firstname", user.firstname);
-        //console.log("Login Successful",responseBody.data)
+        localStorage.setItem("userId", responseBody.data.id);
 
-        //redirect page to dashboard page if credentials were successful
-
-       // window.location = "./dashboard?userId=" + responseBody.data.id
-       //http://localhost:9001/dashboard?userId=4
         window.location = `./dashboard?userId=${responseBody.data.id}`;
 
     }

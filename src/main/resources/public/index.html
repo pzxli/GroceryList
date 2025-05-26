@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="globals/globals.css">
     <link rel="stylesheet" href="styles.css">
 
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
 </head>
 <body>
     
@@ -35,13 +39,13 @@
 <!-- login form -->
 
       <div id="login-container">
-          <form id="login-form">
-            <h3>Login</h3>
-            <div><input type="text" id="username" placeholder="Username"></div>
-            <div><input type="password" id="password" placeholder="Password"></div>
-            <div id="message"></div>
-            <div><button class="btn btn-primary">Login</button></div>
-          </form>
+        <form id="login-form" autocomplete="off">
+          <h3>Login</h3>
+          <div><input type="text" id="username" placeholder="Username" autocomplete="off"></div>
+          <div><input type="password" id="password" placeholder="Password" autocomplete="off"></div>
+          <div id="message"></div>
+          <div><button class="btn btn-primary">Login</button></div>
+        </form>
       </div>
 
 
